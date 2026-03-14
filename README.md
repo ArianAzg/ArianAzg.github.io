@@ -1,2 +1,2 @@
 # My personal website
-Please visit [WEBSITE](arianazg.github.io)
+Please visit [My webpage](https://arianazg.github.io)
