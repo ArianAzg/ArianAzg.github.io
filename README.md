@@ -1,2 +1,2 @@
-# ArianAzg.github.io
+# arianazg.github.io
 My personal website
