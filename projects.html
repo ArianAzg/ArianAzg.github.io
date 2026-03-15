@@ -217,6 +217,24 @@
         padding: 24px;
       }
     }
+
+        .sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 20px;
+      align-items: center;
+    }
+    
+    .sponsor-grid img {
+      width: 100%;
+      max-height: 120px;
+      object-fit: contain;
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    
   </style>
 </head>
 <body>
@@ -405,11 +423,12 @@
     </section>
 
     <section>
-      <h2>In Progress</h2>
-      <p>
-        This page is a living summary of my research portfolio. I will continue updating it
-        with project descriptions, publications, software links, images, and demos.
-      </p>
+      <h2>Research Sponcers</h2>
+      <div class="sponsor-grid">
+        <img src="images/NCDRC_Logo.png" alt="NCDRC">
+        <img src="images/CivMil_Logo.png" alt="CivMil">
+        <img src="images/ONR_Logo.png" alt="ONR">
+      </div>
     </section>
   </main>
 
