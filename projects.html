@@ -127,61 +127,100 @@
       color: var(--text);
     }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 18px;
+    .featured-projects {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 20px;
     }
-
-    .project-card {
-      background: linear-gradient(180deg, #ffffff, #f8fbff);
+    
+    .featured-project {
       border: 1px solid var(--border);
-      border-left: 6px solid var(--blue);
-      border-radius: 18px;
-      padding: 22px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
     }
-
-    .project-card h3 {
+    
+    .project-header {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+      padding: 20px 24px;
+    }
+    
+    .project-header h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.3rem;
+    }
+    
+    .project-duration {
+      font-size: 0.95rem;
+      color: #dbeafe;
+      font-weight: 500;
+    }
+    
+    .project-body {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      padding: 24px;
+      align-items: start;
+    }
+    
+    .project-figure img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid #dbeafe;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .project-figure-caption {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    
+    .project-content p {
       margin-top: 0;
+      margin-bottom: 14px;
+    }
+    
+    .project-content ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    
+    .project-content li {
       margin-bottom: 10px;
-      color: var(--navy);
-      font-size: 1.15rem;
     }
-
-    .project-card p {
-      margin-bottom: 12px;
+    
+    .project-links {
+      margin-top: 16px;
     }
-
-    .tag-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      font-weight: 600;
-      background: #e0ecff;
-      color: var(--blue);
-    }
-
-    .links a {
+    
+    .project-links a {
       display: inline-block;
       margin-right: 10px;
-      margin-top: 8px;
+      margin-bottom: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #e0ecff;
+      color: var(--blue);
       text-decoration: none;
       font-weight: 600;
-      color: var(--blue);
+      font-size: 0.92rem;
     }
-
-    .links a:hover {
-      text-decoration: underline;
+    
+    .project-links a:hover {
+      background: var(--blue);
+      color: white;
+    }
+    
+    @media (max-width: 900px) {
+      .project-body {
+        grid-template-columns: 1fr;
+      }
     }
 
     .muted {
@@ -278,97 +317,148 @@
 
     <section>
       <h2>Featured Research Projects</h2>
-
-      <div class="project-grid">
-
-        <div class="project-card">
-          <h3>AI-Guided Ultrasound and Operator Support</h3>
-          <p>
-            Developing machine learning tools that help guide ultrasound acquisition,
-            support untrained or minimally trained users, and improve standardization
-            of image capture in challenging clinical or austere environments.
-          </p>
-          <div class="tag-group">
-            <span class="tag">Ultrasound AI</span>
-            <span class="tag">Operator Guidance</span>
-            <span class="tag">Clinical Translation</span>
+    
+      <div class="featured-projects">
+    
+        <div class="featured-project">
+          <div class="project-header">
+            <h3>AI-Guided Ultrasound and Operator Support</h3>
+            <div class="project-duration">2024 – Present</div>
+          </div>
+    
+          <div class="project-body">
+            <div class="project-figure">
+              <img src="images/ultrasound_project.png" alt="AI-Guided Ultrasound project figure">
+              <div class="project-figure-caption">
+                Example graphical abstract or representative ultrasound workflow.
+              </div>
+            </div>
+    
+            <div class="project-content">
+              <p>
+                Developing machine learning tools that help guide ultrasound acquisition,
+                support minimally trained users, and improve image standardization in
+                real-world clinical environments.
+              </p>
+    
+              <ul>
+                <li>Publication 1: Add your ultrasound guidance paper here.</li>
+                <li>Publication 2: Add your freehand ultrasound or reconstruction paper here.</li>
+                <li>Publication 3: Add relevant conference abstract, software, or demo here.</li>
+              </ul>
+    
+              <div class="project-links">
+                <a href="#">Paper</a>
+                <a href="#">Code</a>
+                <a href="#">Dataset</a>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="project-card">
-          <h3>Automated Venous Gas Emboli Detection</h3>
-          <p>
-            Building deep learning systems for automatic grading and detection of venous
-            gas emboli from Doppler ultrasound audio and echocardiographic data, including
-            real-time feasibility and software deployment.
-          </p>
-          <div class="tag-group">
-            <span class="tag">Doppler Ultrasound</span>
-            <span class="tag">Deep Learning</span>
-            <span class="tag">Real-Time AI</span>
+    
+        <div class="featured-project">
+          <div class="project-header">
+            <h3>Automated Venous Gas Emboli Detection</h3>
+            <div class="project-duration">2021 – Present</div>
+          </div>
+    
+          <div class="project-body">
+            <div class="project-figure">
+              <img src="images/vge_project.png" alt="Venous Gas Emboli project figure">
+              <div class="project-figure-caption">
+                Deep learning pipeline for VGE detection from Doppler ultrasound audio.
+              </div>
+            </div>
+    
+            <div class="project-content">
+              <p>
+                Building deep learning systems for automatic grading and detection of venous
+                gas emboli from Doppler ultrasound audio and echocardiographic data, including
+                real-time deployment.
+              </p>
+    
+              <ul>
+                <li>
+                  Deep Learning-Based Venous Gas Emboli Grade Classification in Doppler Ultrasound Audio Recordings
+                  <a href="https://ieeexplore.ieee.org/abstract/document/9931413" target="_blank">[Article]</a>
+                  <a href="https://github.com/ArianAzg/Automatic-Venous-Gas-Emboli-Classification-in-Audio-Doppler-Ultrasound-with-Deep-Neural-Networks" target="_blank">[Code]</a>
+                </li>
+                <li>Add another VGE-related paper or abstract here.</li>
+                <li>Add any software/demo/realtime deployment output here.</li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <div class="project-card">
-          <h3>Speech and Audio Biomarkers for Health</h3>
-          <p>
-            Investigating voice, breathing, and acoustic biomarkers for health monitoring,
-            including respiratory stress, edema-related signatures, and speech enhancement
-            for medical applications.
-          </p>
-          <div class="tag-group">
-            <span class="tag">Audio AI</span>
-            <span class="tag">Voice Biomarkers</span>
-            <span class="tag">Digital Health</span>
+    
+        <div class="featured-project">
+          <div class="project-header">
+            <h3>Speech and Audio Biomarkers for Health</h3>
+            <div class="project-duration">2023 – Present</div>
+          </div>
+    
+          <div class="project-body">
+            <div class="project-figure">
+              <img src="images/audio_project.png" alt="Speech and audio biomarker project figure">
+              <div class="project-figure-caption">
+                Voice, breathing, and signal biomarkers for health monitoring.
+              </div>
+            </div>
+    
+            <div class="project-content">
+              <p>
+                Investigating speech, breathing, and acoustic biomarkers for digital health,
+                including respiratory stress, edema-related signatures, and enhancement methods
+                for noisy medical audio.
+              </p>
+    
+              <ul>
+                <li>
+                  Improving deep speech denoising by noisy2noisy signal mapping
+                  <a href="https://www.sciencedirect.com/science/article/abs/pii/S0003682X20307350" target="_blank">[Article]</a>
+                </li>
+                <li>
+                  Consensus-Based Definitions for Vocal Biomarkers: The International VOCAL Initiative
+                  <a href="https://www.medrxiv.org/content/10.1101/2025.10.23.25338518v2" target="_blank">[Article]</a>
+                </li>
+                <li>Add your voice biomarker grant/project paper here.</li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <div class="project-card">
-          <h3>Medical Imaging AI</h3>
-          <p>
-            Designing AI pipelines for quantitative analysis of ultrasound and CT data,
-            including applications in pleural effusions, endometriosis staging,
-            diabetic pathology, and image-based decision support.
-          </p>
-          <div class="tag-group">
-            <span class="tag">Medical Imaging</span>
-            <span class="tag">Quantification</span>
-            <span class="tag">Decision Support</span>
+    
+        <div class="featured-project">
+          <div class="project-header">
+            <h3>Multispectral Image Fusion and Remote Sensing</h3>
+            <div class="project-duration">2017 – 2021</div>
+          </div>
+    
+          <div class="project-body">
+            <div class="project-figure">
+              <img src="images/fusion_project.png" alt="Multispectral image fusion project figure">
+              <div class="project-figure-caption">
+                Deep learning and optimization for multispectral image fusion.
+              </div>
+            </div>
+    
+            <div class="project-content">
+              <p>
+                Earlier work focused on deep learning and optimization-based methods for
+                multispectral image fusion, pansharpening, and remote sensing image analysis.
+              </p>
+    
+              <ul>
+                <li>
+                  Convolutional Autoencoder-Based Multispectral Image Fusion
+                  <a href="https://ieeexplore.ieee.org/abstract/document/8668404" target="_blank">[Article]</a>
+                  <a href="https://github.com/ArianAzg/ConvolutionalAutoEncoder-ImageFusion" target="_blank">[Code]</a>
+                </li>
+                <li>Add a second image fusion paper here.</li>
+                <li>Add a third remote sensing paper here.</li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <div class="project-card">
-          <h3>Smartphone and Edge Deployment</h3>
-          <p>
-            Translating trained machine learning models into practical, real-time systems
-            on smartphones and portable devices for accessible health technologies and
-            point-of-care use.
-          </p>
-          <div class="tag-group">
-            <span class="tag">Smartphone AI</span>
-            <span class="tag">Edge Computing</span>
-            <span class="tag">Real-Time Systems</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Multispectral Image Fusion and Remote Sensing</h3>
-          <p>
-            Earlier work focused on deep learning and optimization-based methods for
-            multispectral image fusion, pansharpening, and remote sensing image analysis,
-            forming the basis of my doctoral research.
-          </p>
-          <div class="tag-group">
-            <span class="tag">Image Fusion</span>
-            <span class="tag">Remote Sensing</span>
-            <span class="tag">Deep Learning</span>
-          </div>
-          <div class="links">
-            <a href="https://ieeexplore.ieee.org/abstract/document/8668404" target="_blank">Article</a>
-            <a href="https://github.com/ArianAzg/ConvolutionalAutoEncoder-ImageFusion" target="_blank">Code</a>
-          </div>
-        </div>
-
+    
       </div>
     </section>
 
