@@ -1,2 +1,2 @@
-# My personal website located below
+# My personal website
 Please visit [My webpage](https://arianazg.github.io)
